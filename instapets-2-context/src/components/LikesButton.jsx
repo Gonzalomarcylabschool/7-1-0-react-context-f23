@@ -1,13 +1,13 @@
-import { useState, useContext } from 'react';
+import { useState, useContext } from 'react';// import useContext
 import InstagramContext from "../context/InstagramContext";
 
 const LikesButton = () => {
   const [likes, setLikes] = useState(0);
 
-  const contextValues = useContext(InstagramContext);
+  const contextValues = useContext(InstagramContext);// is an object
 
   const handleClick = () => {
-    contextValues.incrementTotalLikes();
+    contextValues.incrementTotalLikes();//from the context
     setLikes(likes + 1)
   }
 

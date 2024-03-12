@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
-const LikesButton = ({ incrementTotalLikes }) => {
-  const [likes, setLikes] = useState(0);
+const LikesButton = ({ incrementTotalLikes }) => { // passing the setter function in as a prop
+  const [likes, setLikes] = useState(0); // state for the likes in this component 
 
   const handleClick = () => {
-    incrementTotalLikes();
+    incrementTotalLikes(); // finally invoking it
     setLikes(likes + 1)
   }
 

@@ -8,13 +8,13 @@ const pictures = [
   { id: getId(), src: "./images/duck.jpeg", caption: "quack!" },
 ];
 
-const PicturesList = ({ incrementTotalLikes }) => {
+const PicturesList = ({ incrementTotalLikes }) => { // passing in the setter function as a prop
   // Create an <InstagramPost /> for each element
   return <ul className='pictures-list'>{
     pictures.map((picture) => <InstagramPost
       key={picture.id}
       picture={picture}
-      incrementTotalLikes={incrementTotalLikes}
+      incrementTotalLikes={incrementTotalLikes}// only a prop not being invoked
     />)
   }</ul>;
 };

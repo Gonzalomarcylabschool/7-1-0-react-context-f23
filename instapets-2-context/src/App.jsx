@@ -7,16 +7,16 @@ import { useState } from "react";
 import InstagramContext from "./context/InstagramContext";
 
 const App = () => {
-  const [totalLikes, setTotalLikes] = useState(0);
-  const incrementTotalLikes = () => {
+  const [totalLikes, setTotalLikes] = useState(0);// useState to use the context
+  const incrementTotalLikes = () => { 
     setTotalLikes((totalLikes) => totalLikes + 1);
   }
 
-  const contextValues = { totalLikes, incrementTotalLikes }
+  const contextValues = { totalLikes, incrementTotalLikes } // the context we want to use
 
   return (
     <>
-      <InstagramContext.Provider value={contextValues}>
+      <InstagramContext.Provider value={contextValues}> {/**context provider get the context that we declared */}
         <Header />
         <PicturesList />
       </InstagramContext.Provider>

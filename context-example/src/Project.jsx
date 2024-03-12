@@ -3,13 +3,13 @@ import LikesContext from './LikesContext';
 
 const Project = ({ name }) => {
 
-  const { totalLikes, setTotalLikes } = useContext(LikesContext);
-
+  // const { totalLikes, setTotalLikes } = useContext(LikesContext);
+  const contextValues = useContext(LikesContext);
   const [hasBeenLiked, setHasBeenLiked] = useState(false);
 
   const handleClick = () => {
-    const newLikes = totalLikes + (hasBeenLiked ? -1 : 1)
-    setTotalLikes(newLikes);
+    const newLikes = contextValues.totalLikes + (hasBeenLiked ? -1 : 1)
+    contextValues.setTotalLikes(newLikes);
     setHasBeenLiked(!hasBeenLiked)
   }
 
